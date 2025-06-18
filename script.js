@@ -1,7 +1,7 @@
 function stringChop(str, size) {
   // Handle null input
   if (str === null) {
-    return [];
+   return "";
   }
 
   let result = [];
