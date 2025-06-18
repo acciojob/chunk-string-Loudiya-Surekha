@@ -1,18 +1,17 @@
 function stringChop(str, size) {
-  // Convert size to a number
+  // Handle null input
+  if (str === null) {
+    return [];
+  }
+  
+  // Convert size to a number and check if it's valid
   size = Number(size);
-
-  // Handle null or invalid input
-  if (str === null || size <= 0 || isNaN(size)) {
+  if (size <= 0) {
     return [];
   }
 
-  // If chunk size is greater than string length
-  if (size >= str.length) {
-    return [str];
-  }
-
   let result = [];
+
   for (let i = 0; i < str.length; i += size) {
     result.push(str.slice(i, i + size));
   }
@@ -23,5 +22,4 @@ function stringChop(str, size) {
 // Do not change the code below
 const str = prompt("Enter String.");
 const size = prompt("Enter Chunk Size.");
-const chunks = stringChop(str, size);
-alert(JSON.stringify(chunks)); // Display as string but keep logic clean
+alert(stringChop(str, size));
