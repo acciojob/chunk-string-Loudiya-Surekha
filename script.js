@@ -1,7 +1,7 @@
 function stringChop(str, size) {
   // Handle null input
   if (str === null) {
-   return "";
+    return [];
   }
 
   let result = [];
@@ -16,4 +16,6 @@ function stringChop(str, size) {
 // Do not change the code below
 const str = prompt("Enter String.");
 const size = parseInt(prompt("Enter Chunk Size."));
-alert(JSON.stringify(stringChop(str, size)));
+
+const result = stringChop(str, size);
+alert(JSON.stringify(result));
